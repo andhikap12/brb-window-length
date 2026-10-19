@@ -40,9 +40,9 @@ seeds. The only lever that moves the lightest-load result is the analysis window
 - **Scope:** only the Treml motor pipeline and the experiments the paper reports are kept. The
   Ottawa/bearing/gearbox pipelines, order-normalised and per-sensor representations, the other
   backbones, augmentation tracing, the GRL on/off schedules and the exploratory input-representation
-  runners were removed (they are in the git history). The same holds for the exploratory
-  w65536 and global-normalization arms, the amplitude-shuffle and transient-window checks,
-  and the Rec-Accuracy sweep over the whole family, none of which the paper reports. The
+  runners are not part of this repository, and neither are the exploratory w65536 and
+  global-normalization arms, the amplitude-shuffle and transient-window checks, and the
+  Rec-Accuracy sweep over the whole family, none of which the paper reports. The
   `--env-band` option of `run_preprocessing.py` and the token cap in the backbones remain in
   the code but no result in the paper uses them.
 
