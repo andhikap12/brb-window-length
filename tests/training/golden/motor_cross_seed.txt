@@ -1,0 +1,40 @@
+
+==============================================================
+  >>> SEED 42 — full Leave-Torque-Out CV
+==============================================================
+
+  [SEED 42] CV-mean over 2 folds: Win-F1=80.00%  Rec-Acc=90.00%
+
+==============================================================
+  >>> SEED 123 — full Leave-Torque-Out CV
+==============================================================
+
+  [SEED 123] CV-mean over 2 folds: Win-F1=90.00%  Rec-Acc=95.00%
+
+==============================================================
+  DANN LTO-CV SUMMARY: motor_x
+  lambda_max=1.0  |  seeds=[42, 123]
+  Reported as mean +/- std across seeds (each seed = full LTO-CV).
+==============================================================
+  Metric                 Mean        Std
+  ----------------------------------------
+  Win-F1-macro         85.00%      5.00%
+  Win-Accuracy         75.00%      5.00%
+  Rec-Accuracy         92.50%      2.50%
+  Rec-F1-macro         90.00%      5.00%
+  ----------------------------------------
+  Per-seed Win-F1-macro: 42:80.00%, 123:90.00%
+  Per-seed Rec-Accuracy: 42:90.00%, 123:95.00%
+
+  >> PRIMARY   (unseen torque) Win-F1-macro : 85.00% +/- 5.00%
+  >> SECONDARY (unseen torque) Rec-Accuracy : 92.50% +/- 2.50%
+==============================================================
+
+  COMPARISON GUIDE:
+  +----------------------------------------------------------+
+  | Run baseline:   --lambda_max 0.0 --name ..._baseline     |
+  | Run full DANN:  --lambda_max 1.0 --name ..._dann         |
+  | Compare by Win-F1-macro (primary), mean +/- std/seeds.   |
+  | A backbone wins only if it clears the cross-seed std.    |
+  +----------------------------------------------------------+
+

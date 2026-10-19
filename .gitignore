@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+DatasetRaw/
+/data/
+/models/
+/results/
+/logs/
+*.npz
+*.pth
+*.pkl
+*.mat
