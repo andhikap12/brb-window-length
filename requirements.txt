@@ -1,0 +1,19 @@
+# Python 3.11 + CUDA 12.1. Install torch first from the cu121 index:
+#   pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+# then: pip install -r requirements.txt
+# The environment used for the paper had tsai 0.4.1 in site-packages (non-editable).
+
+tsai==0.4.1
+
+# --- Data processing ---
+numpy==1.26.4
+pandas==3.0.2
+scipy==1.17.1
+h5py==3.16.0
+
+# --- FastAI (required by tsai) ---
+fastai==2.8.7
+fastcore==1.12.39
+
+# --- ML utilities ---
+scikit-learn==1.8.0

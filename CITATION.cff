@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated paper."
+title: "Code for: Analysis Window Duration Outweighs Domain-Generalization Objectives in Vibration-Based Broken Rotor Bar Detection Under Unseen Loads"
+type: software
+authors:
+  - family-names: "Putra"
+    given-names: "Andhika"
+    affiliation: "Institut Teknologi Sepuluh Nopember"
+  - family-names: "Rachmadi"
+    given-names: "Reza Fuad"
+    affiliation: "Institut Teknologi Sepuluh Nopember"
+  - family-names: "Purnomo"
+    given-names: "Mauridhi Hery"
+    affiliation: "Institut Teknologi Sepuluh Nopember"
+license: MIT
+year: 2026
+repository-code: "https://github.com/andhikap12/brb-window-length"
