@@ -18,3 +18,4 @@ graphify-out/
 docs/
 CLAUDE.md
 AGENTS.md
+scripts/audit/grad_traj.json

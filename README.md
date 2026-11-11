@@ -67,7 +67,7 @@ Diagnosing Rotor Broken Bar in a Three-Phase Induction Motor*, IEEE DataPort, 20
 datasets used in the paper:
 
 ```bash
-python scripts/run_preprocessing.py --motor                                  # w4096, stride 4096
+python scripts/run_preprocessing.py --motor --stride 4096                    # w4096, stride 4096
 python scripts/run_preprocessing.py --motor --window 16384 --stride 4096     # w16384, 75% overlap
 python scripts/run_preprocessing.py --motor --window 16384 --stride 16384    # w16384, no overlap
 python scripts/make_subsample_w4096.py                                       # w4096, window count matched to w16384

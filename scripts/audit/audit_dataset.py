@@ -7,7 +7,7 @@ from pathlib import Path
 
 import h5py
 import numpy as np
-from scipy.signal import butter, filtfilt, hilbert
+from scipy.signal import butter, hilbert, sosfiltfilt
 
 RAW = Path(__file__).resolve().parents[2] / "DatasetRaw" / "banco de dados experimental"
 PROC = Path(__file__).resolve().parents[2] / "data" / "processed" / "motor"
@@ -36,8 +36,8 @@ def rebuild(cond: str, tq: str, rep: int):
     x = x[:, onset:n]                                          # trim_to_onset
     # envelope slip-band pada sinyal TER-TRIM
     mean_sig = x.mean(axis=0).astype(np.float64)
-    b, a = butter(ORDER, [BLO / (FS / 2), BHI / (FS / 2)], btype="bandpass")
-    env = np.abs(hilbert(filtfilt(b, a, mean_sig))).astype(np.float32)
+    sos = butter(ORDER, [BLO / (FS / 2), BHI / (FS / 2)], btype="bandpass", output="sos")
+    env = np.abs(hilbert(sosfiltfilt(sos, mean_sig))).astype(np.float32)  # same filter as the pipeline
     x = np.concatenate([x, env[None, :]], axis=0)              # (6, n')
     nw = (x.shape[1] - W) // S + 1
     return np.stack([x[:, i * S:i * S + W] for i in range(nw)]), onset, n

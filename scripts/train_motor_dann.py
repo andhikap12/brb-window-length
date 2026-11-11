@@ -1,6 +1,7 @@
 """train_motor_dann.py - Load-Robust Motor Fault Classification via Domain-Adversarial DG."""
 
 import argparse
+import gc
 import sys
 from pathlib import Path
 
@@ -578,6 +579,7 @@ def main() -> None:
 
             fold_results.append(test_res)
             del learn
+            gc.collect()  # Learner/dls reference cycles keep a copy of X per seed alive
             torch.cuda.empty_cache()
 
         return fold_results
